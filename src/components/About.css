@@ -1,0 +1,243 @@
+.section-head {
+  margin-bottom: 56px;
+}
+
+/* ====== BENTO GRID ====== */
+.about-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+}
+
+.bento-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Bio / Code editor — spans 6 cols */
+.bento-bio {
+  grid-column: span 6;
+}
+
+/* Education — spans 6 cols */
+.bento-edu {
+  grid-column: span 6;
+}
+
+/* Location — spans 4 cols */
+.bento-location {
+  grid-column: span 4;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+}
+
+/* Craft/Marquee — spans 5 cols */
+.bento-craft {
+  grid-column: span 5;
+  overflow: hidden;
+}
+
+/* Fun fact — spans 3 cols */
+.bento-fun {
+  grid-column: span 3;
+}
+
+/* ====== EDUCATION ====== */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.edu-item:hover {
+  border-color: var(--border-hover);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.edu-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.edu-degree {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.edu-school {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.edu-period {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+}
+
+.edu-cgpa {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.08);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* ====== OPEN TO WORK ====== */
+.openwork-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.openwork-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.openwork-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #34d399;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.openwork-dot::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.3);
+  animation: pulsate 2s ease-out infinite;
+}
+
+.openwork-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #34d399;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.openwork-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.openwork-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.openwork-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.openwork-cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-indigo);
+  text-decoration: none;
+  margin-top: auto;
+  transition: color var(--transition-fast);
+}
+
+.openwork-cta:hover {
+  color: var(--accent-violet);
+}
+
+/* ====== CRAFT ====== */
+.craft-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ====== FUN ====== */
+.fun-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.fun-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.fun-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.fun-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.fun-desc strong {
+  color: var(--accent-indigo);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .bento-bio,
+  .bento-edu {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-bio,
+  .bento-edu {
+    grid-column: span 1;
+  }
+}
