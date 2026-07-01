@@ -17,7 +17,7 @@ This is the personal portfolio of Dharmik Suchak, a Software Engineer specializi
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd portfolio-app
+   cd dharmiksuchak-portfolio
    ```
 3. **Install dependencies:**
    ```bash
