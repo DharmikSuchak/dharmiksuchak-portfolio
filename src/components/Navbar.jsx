@@ -46,10 +46,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="nav-container">
-          {/* Logo */}
-          <a href="#home" className="nav-logo">
-            <span className="logo-name">DS</span>
-          </a>
+
 
           {/* Desktop Links */}
           <ul className="nav-links">

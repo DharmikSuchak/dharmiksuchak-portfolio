@@ -145,7 +145,7 @@ export default function Hero() {
               <FiMail />
             </a>
             <a
-              href="https://leetcode.com/u/DharmikSuchak"
+              href="https://leetcode.com/u/Dharmik_Suchak/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
