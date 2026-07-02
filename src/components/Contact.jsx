@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiMail, FiMapPin, FiPhone, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import { personalInfo } from '../data/portfolioData';
 import './Contact.css';
 
@@ -18,6 +19,8 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,12 +28,45 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // mailto fallback
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.open(`mailto:${personalInfo.email}?subject=${subject}&body=${body}`);
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setLoading(true);
+    setError(false);
+    setSent(false);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS credentials are missing in .env");
+      setError(true);
+      setLoading(false);
+      return;
+    }
+
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        publicKey
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSent(true);
+          setForm({ name: '', email: '', message: '' });
+          setTimeout(() => setSent(false), 5000);
+        },
+        (err) => {
+          console.error('FAILED...', err);
+          setLoading(false);
+          setError(true);
+        }
+      );
   };
 
   return (
@@ -176,8 +212,18 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary contact-submit">
-                {sent ? '✅ Message Sent!' : (
+              {error && (
+                <p className="contact-error-msg" style={{ color: '#ff4d4f', fontSize: '0.9rem', marginBottom: '10px' }}>
+                  Something went wrong, please email me directly at {personalInfo.email}
+                </p>
+              )}
+              {sent && (
+                <p className="contact-success-msg" style={{ color: '#4ade80', fontSize: '0.9rem', marginBottom: '10px' }}>
+                  Message sent, I'll get back to you soon.
+                </p>
+              )}
+              <button type="submit" className="btn btn-primary contact-submit" disabled={loading}>
+                {loading ? 'Sending...' : (
                   <>
                     Send Message
                     <FiSend size={15} />
@@ -195,7 +241,7 @@ export default function Contact() {
           <p className="footer-text font-mono">
             &lt;Dharmik Suchak /&gt; · Built with React + ❤️
           </p>
-          <p className="footer-copy">© 2025 All rights reserved.</p>
+          <p className="footer-copy">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </div>
     </section>
