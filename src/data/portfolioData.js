@@ -141,7 +141,7 @@ export const leadership = [
     period: "Aug 2022 – Jul 2023",
     location: "Rajkot, Gujarat",
     highlights: [
-      "Spearheaded initiatives to foster student engagement with cloud technology — organized impactful events and workshops where students gained practical experience with cloud solutions.",
+      "As Cloud Lead, planned and ran cloud-focused events for the GDSC core team, giving students hands-on exposure to cloud platforms beyond the classroom.",
       "Conducted hands-on GCP workshops, promoting cloud awareness and skill development across the campus community.",
     ],
     icon: "🌐",
@@ -153,7 +153,7 @@ export const leadership = [
     period: "Sep 2023 – Oct 2023",
     location: "Rajkot, Gujarat",
     highlights: [
-      "Organized and co-ordinated a competitive programming event hosted by the Department of Computer Engineering at Marwadi University in collaboration with IEEE.",
+      "Organized and coordinated a competitive programming event hosted by the Department of Computer Engineering at Marwadi University in collaboration with IEEE.",
       "Designed DSA contest tracks targeting junior students, fostering a competitive programming culture on campus.",
     ],
     icon: "🏆",
@@ -164,7 +164,7 @@ export const leadership = [
     role: "Arcade Facilitator",
     period: "Apr 2023 – Jun 2023",
     location: "Remote",
-    highlights: ["Joined Google Cloud Arcade as an Arcade Facilitator: Empowered Users to Explore Cloud Technologies & Earn Rewards."],
+    highlights: ["Facilitated Google Cloud Arcade, guiding participants through hands-on cloud labs and helping them earn completion badges."],
     icon: "☁️",
   },
   {
@@ -173,7 +173,7 @@ export const leadership = [
     role: "Program Facilitator",
     period: "Mar 2022 – Jul 2022",
     location: "India",
-    highlights: ["Mentored 700+ folks learning Cloud Computing under my guidance, helping them achieve milestones by clearing all doubts and queries."],
+    highlights: ["Mentored 700+ learners in cloud computing, helping them work through technical doubts and reach program milestones."],
     icon: "☁️",
   },
 ];

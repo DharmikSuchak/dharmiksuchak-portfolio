@@ -244,9 +244,7 @@ export default function Contact() {
               <span className="footer-logo">
                 {personalInfo.name.split(' ').map(w => w[0]).join('')}
               </span>
-              <p className="footer-tagline">
-                Building scalable systems for a<br />better tomorrow.
-              </p>
+              <p className="footer-tagline">I own what I ship.</p>
             </div>
             <div className="footer-socials">
               <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
