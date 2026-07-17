@@ -1,3 +1,8 @@
+/* Remove section-level bottom padding so footer sits flush with the page edge */
+.contact-section {
+  padding-bottom: 0;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -125,26 +130,52 @@
 
 /* Footer */
 .footer {
-  margin-top: 80px;
-  border-top: 1px solid var(--border);
-  padding: 32px 0;
+  margin-top: 60px;
+  padding: 24px 0 20px;
 }
 
-.footer-inner {
+.footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.footer-text {
-  font-size: 0.85rem;
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-indigo);
+  letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+  font-size: 0.82rem;
   color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  text-align: center;
 }
 
 .footer-copy {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
@@ -163,8 +194,14 @@
     padding: 24px;
   }
 
-  .footer-inner {
+  .footer-top {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    gap: 8px;
   }
 }

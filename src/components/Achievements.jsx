@@ -69,7 +69,7 @@ export default function Achievements() {
           <div className="leadership-grid">
             {leadership.map((role, idx) => (
               <motion.div
-                key={role.org}
+              key={role.id}
                 className="leadership-card glass-card"
                 custom={5 + idx}
                 variants={fadeUp}

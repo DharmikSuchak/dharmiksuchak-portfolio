@@ -135,17 +135,31 @@ export const achievements = [
 
 export const leadership = [
   {
+    id: "gdsc-cloud-lead",
     org: "Google Developer Student Club (GDSC)",
-    role: "Cloud Lead (Core Team Member) & Event Coordinator",
+    role: "Cloud Lead (Core Team Member)",
     period: "Aug 2022 – Jul 2023",
     location: "Rajkot, Gujarat",
     highlights: [
-      "Conducted hands-on GCP workshops for students.",
-      "Co-organized a university-level Competitive Programming contest with IEEE.",
+      "Spearheaded initiatives to foster student engagement with cloud technology — organized impactful events and workshops where students gained practical experience with cloud solutions.",
+      "Conducted hands-on GCP workshops, promoting cloud awareness and skill development across the campus community.",
     ],
     icon: "🌐",
   },
   {
+    id: "algorithm-arena",
+    org: "Algorithm Arena | Dept. of CE, Marwadi University × IEEE",
+    role: "Event Organizer & Coordinator",
+    period: "Sep 2023 – Oct 2023",
+    location: "Rajkot, Gujarat",
+    highlights: [
+      "Organized and co-ordinated a competitive programming event hosted by the Department of Computer Engineering at Marwadi University in collaboration with IEEE.",
+      "Designed DSA contest tracks targeting junior students, fostering a competitive programming culture on campus.",
+    ],
+    icon: "🏆",
+  },
+  {
+    id: "arcade-facilitator",
     org: "Google Cloud Skills Boost",
     role: "Arcade Facilitator",
     period: "Apr 2023 – Jun 2023",
@@ -154,6 +168,7 @@ export const leadership = [
     icon: "☁️",
   },
   {
+    id: "cloud-facilitator",
     org: "Google Cloud Facilitator Program",
     role: "Program Facilitator",
     period: "Mar 2022 – Jul 2022",

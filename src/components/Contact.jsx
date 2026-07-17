@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiMail, FiMapPin, FiPhone, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
+import { SiLeetcode, SiCodio } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 import { personalInfo } from '../data/portfolioData';
 import './Contact.css';
@@ -70,7 +71,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section" ref={ref}>
+    <section id="contact" className="section contact-section" ref={ref}>
       <div className="container">
         <motion.div
           className="section-head"
@@ -237,11 +238,37 @@ export default function Contact() {
 
       {/* Footer */}
       <div className="footer">
-        <div className="container footer-inner">
-          <p className="footer-text font-mono">
-            &lt;Dharmik Suchak /&gt; · Built with React + ❤️
-          </p>
-          <p className="footer-copy">© {new Date().getFullYear()} All rights reserved.</p>
+        <div className="container">
+          <div className="footer-top">
+            <div className="footer-brand">
+              <span className="footer-logo">
+                {personalInfo.name.split(' ').map(w => w[0]).join('')}
+              </span>
+              <p className="footer-tagline">
+                Building scalable systems for a<br />better tomorrow.
+              </p>
+            </div>
+            <div className="footer-socials">
+              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
+                <FiGithub />
+              </a>
+              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="social-link" title="LinkedIn">
+                <FiLinkedin />
+              </a>
+              <a href={`mailto:${personalInfo.email}`} className="social-link" title="Email">
+                <FiMail />
+              </a>
+              <a href={personalInfo.codolio} target="_blank" rel="noopener noreferrer" className="social-link" title="Codolio">
+                <SiCodio />
+              </a>
+              <a href="https://leetcode.com/u/Dharmik_Suchak/" target="_blank" rel="noopener noreferrer" className="social-link" title="LeetCode">
+                <SiLeetcode />
+              </a>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p className="footer-copy">© {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </section>
