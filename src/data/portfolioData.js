@@ -20,8 +20,8 @@ export const personalInfo = {
 
 export const education = [
   {
-    institution: "Dhirubhai Ambani Institute of Information & Communication Technology",
-    shortName: "DA-IICT, Gandhinagar",
+    institution: "Dhirubhai Ambani University (formerly known as DA-IICT)",
+    shortName: "Dhirubhai Ambani University, Gandhinagar",
     degree: "M.Tech in Software Systems",
     cgpa: "8.39",
     period: "2024 – 2026",
@@ -45,11 +45,11 @@ export const experience = [
     period: "Jan 2026 – June 2026",
     note: "PPO Offered",
     highlights: [
-      "Built the backend security layer from scratch — JWT/bcrypt auth, CORS, rate limiting on auth routes, then rolled out a 5-tier RBAC system across a 5-server production setup handling 800+ users.",
-      "Automated the entire Meesho data sync (orders, payments, returns, claims) using a custom proxy routing system that distributed requests across multiple IPs to avoid platform-side blocks.",
-      "Owned the full release pipeline — local testing, staging validation, production across 5 instances with PgCat pooling & clustered Node.js workers. Added missing DB indexes that dropped server load by ~50%.",
+      "Built and deployed a multi-database data reconciliation platform with RESTful APIs, serving 1,000+ active e-commerce sellers — enabling automated SKU-wise P&L tracking and financial settlement management across 5 production server instances.",
+      "Engineered a load-balanced worker system with residential IP rotation to automate Meesho data sync on a 7-day scheduled auto-fetch cycle, achieving a 90%+ request success rate against Akamai bot protection. Designed a 5-tier RBAC system with JWT auth, token-bucket rate limiting, and CORS hardening to enforce strict data isolation across Super Admin, SBM, RM, Admin, and User roles.",
+      "Reduced server CPU load by ~50% through systematic database index optimization, and improved UI responsiveness with server-side pagination and lazy loading for high-volume data views.",
     ],
-    tech: ["Node.js", "MongoDB", "PostgreSQL", "Redis", "PgCat", "JWT", "RBAC"],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "Redis", "Docker", "GCP"],
     color: "#0284c7",
   },
   {
@@ -59,10 +59,10 @@ export const experience = [
     period: "Jan 2024 – June 2024",
     note: null,
     highlights: [
-      "Developed SwipetoShare and Article Bookmarking features in Flutter for Kutchsetu, a live news aggregator app on the Play Store.",
-      "Built a proxy layer to route requests through third-party news APIs, enabling free content delivery to users without direct API cost exposure.",
+      "Built a content aggregation proxy layer using Express.js and Prisma to route requests through premium news APIs with paywall authentication — achieving a 100% request pass-through rate and delivering free content to end users via a scheduled ingestion pipeline refreshing every 30 minutes.",
+      "Developed SwipeToShare and Article Bookmarking features in Flutter for a live news aggregator app published on the Google Play Store, improving user engagement and content discoverability.",
     ],
-    tech: ["Flutter", "Dart", "Express.js", "REST APIs"],
+    tech: ["Flutter", "Node.js", "Express.js", "Prisma", "MySQL"],
     color: "#0ea5e9",
   },
 ];
