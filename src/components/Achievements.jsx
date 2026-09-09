@@ -90,7 +90,7 @@ export default function Achievements() {
                 <ul className="leadership-highlights">
                   {role.highlights.map((h, i) => (
                     <li key={i} className="exp-highlight-item">
-                      <span className="highlight-bullet" style={{ background: '#6366f1' }} />
+                      <span className="highlight-bullet" style={{ background: '#0284c7' }} />
                       <span>{h}</span>
                     </li>
                   ))}

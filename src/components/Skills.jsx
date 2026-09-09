@@ -12,9 +12,9 @@ const categoryIcons = {
 };
 
 const skillColors = {
-  Languages: '#6366f1',
-  'Backend & Frontend': '#8b5cf6',
-  Databases: '#06b6d4',
+  Languages: '#0284c7',
+  'Backend & Frontend': '#0369a1',
+  Databases: '#0ea5e9',
   'Cloud & DevOps': '#10b981',
   'AI/ML': '#f59e0b',
 };

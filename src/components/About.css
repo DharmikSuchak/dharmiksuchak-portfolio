@@ -58,7 +58,7 @@
   gap: 14px;
   align-items: flex-start;
   padding: 16px;
-  background: rgba(255,255,255,0.02);
+  background: var(--surface-subtle);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
@@ -66,7 +66,7 @@
 
 .edu-item:hover {
   border-color: var(--border-hover);
-  background: rgba(99, 102, 241, 0.05);
+  background: rgba(var(--interactive-rgb), 0.05);
 }
 
 .edu-icon {
@@ -98,7 +98,7 @@
   font-size: 0.75rem;
   font-family: var(--font-mono);
   color: var(--text-muted);
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-subtle);
   padding: 3px 10px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border);
@@ -178,14 +178,14 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent-indigo);
+  color: var(--interactive);
   text-decoration: none;
   margin-top: auto;
   transition: color var(--transition-fast);
 }
 
 .openwork-cta:hover {
-  color: var(--accent-violet);
+  color: var(--interactive);
 }
 
 /* ====== CRAFT ====== */
@@ -220,7 +220,7 @@
 }
 
 .fun-desc strong {
-  color: var(--accent-indigo);
+  color: var(--interactive);
 }
 
 /* ====== RESPONSIVE ====== */

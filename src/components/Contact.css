@@ -44,12 +44,12 @@
   width: 38px;
   height: 38px;
   border-radius: var(--radius-md);
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(var(--interactive-rgb), 0.12);
+  border: 1px solid rgba(var(--interactive-rgb), 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-indigo);
+  color: var(--interactive);
   font-size: 1rem;
   flex-shrink: 0;
 }
@@ -70,7 +70,7 @@
 }
 
 .contact-detail-value:hover {
-  color: var(--accent-indigo);
+  color: var(--interactive);
 }
 
 .contact-socials {
@@ -152,7 +152,7 @@
 .footer-logo {
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--accent-indigo);
+  color: var(--interactive);
   letter-spacing: -0.02em;
 }
 

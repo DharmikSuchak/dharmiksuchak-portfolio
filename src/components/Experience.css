@@ -66,7 +66,7 @@
 .exp-period {
   font-size: 0.8rem;
   color: var(--text-muted);
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-subtle);
   border: 1px solid var(--border);
   padding: 4px 12px;
   border-radius: var(--radius-full);

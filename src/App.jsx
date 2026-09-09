@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       {/* Mesh background */}
-      <div className="bg-mesh grid-dots" />
+      <div className="bg-mesh grid-dots">
+        <span className="bg-blob bg-blob-indigo" />
+      </div>
 
       <Navbar />
 

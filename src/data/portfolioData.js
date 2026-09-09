@@ -42,7 +42,7 @@ export const experience = [
     company: "HM Square Solutions LLP (Speed Ecom Solution)",
     role: "Software Development Intern",
     type: "Full-time · Surat, India",
-    period: "Jan 2026 – May 2026",
+    period: "Jan 2026 – June 2026",
     note: "PPO Offered",
     highlights: [
       "Built the backend security layer from scratch — JWT/bcrypt auth, CORS, rate limiting on auth routes, then rolled out a 5-tier RBAC system across a 5-server production setup handling 800+ users.",
@@ -50,20 +50,20 @@ export const experience = [
       "Owned the full release pipeline — local testing, staging validation, production across 5 instances with PgCat pooling & clustered Node.js workers. Added missing DB indexes that dropped server load by ~50%.",
     ],
     tech: ["Node.js", "MongoDB", "PostgreSQL", "Redis", "PgCat", "JWT", "RBAC"],
-    color: "#6366f1",
+    color: "#0284c7",
   },
   {
     company: "Neuralquark Computing LLP",
     role: "Software Engineer Intern",
     type: "Full-time · Rajkot, India",
-    period: "Jan 2024 – May 2024",
+    period: "Jan 2024 – June 2024",
     note: null,
     highlights: [
       "Developed SwipetoShare and Article Bookmarking features in Flutter for Kutchsetu, a live news aggregator app on the Play Store.",
       "Built a proxy layer to route requests through third-party news APIs, enabling free content delivery to users without direct API cost exposure.",
     ],
     tech: ["Flutter", "Dart", "Express.js", "REST APIs"],
-    color: "#8b5cf6",
+    color: "#0ea5e9",
   },
 ];
 
@@ -76,7 +76,7 @@ export const projects = [
     github: "https://github.com/DharmikSuchak",
     demo: null,
     category: "AI/ML",
-    color: "#6366f1",
+    color: "#0284c7",
     image: "/pic6.png",
     guide: "Prof. Jayprakash Lalchandani",
   },
@@ -88,7 +88,7 @@ export const projects = [
     github: "https://github.com/DharmikSuchak",
     demo: null,
     category: "Web Dev",
-    color: "#8b5cf6",
+    color: "#0ea5e9",
     image: "/pic7.png",
   },
 ];
@@ -115,7 +115,7 @@ export const achievements = [
     description: "Solved 800+ problems across platforms",
     detail: "LeetCode 1471 (Peak) · CodeChef 1431 (2★)",
     icon: "⚔️",
-    color: "#6366f1",
+    color: "#0284c7",
   },
   {
     title: "Hackathon Recognition",
@@ -129,7 +129,7 @@ export const achievements = [
     description: "Fan page with 113,000+ followers",
     detail: "Social Media Content Creator",
     icon: "📱",
-    color: "#ec4899",
+    color: "#db2777",
   },
 ];
 

@@ -10,7 +10,7 @@
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-subtle);
   border: 1px solid var(--border);
   transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex;
@@ -18,9 +18,9 @@
 }
 
 .project-card:hover {
-  border-color: rgba(99, 102, 241, 0.35);
+  border-color: rgba(var(--interactive-rgb), 0.35);
   transform: translateY(-6px);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.15);
+  box-shadow: var(--shadow-card-hover), 0 0 0 1px rgba(var(--interactive-rgb), 0.15);
 }
 
 /* ====== Cover Image Banner ====== */
@@ -117,7 +117,7 @@
 }
 
 .project-guide span {
-  color: var(--accent-indigo);
+  color: var(--interactive);
   font-style: normal;
   font-weight: 600;
 }

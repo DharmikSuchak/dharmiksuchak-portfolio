@@ -8,29 +8,44 @@
   overflow: hidden;
 }
 
-/* Decorative orbs */
+/* Decorative blobs — purple / indigo, blurred + screen-blended. Dark theme only:
+   screen-blend has no dark ground to show against on the light page. */
 .hero-glow-1 {
   position: absolute;
-  width: 700px;
-  height: 700px;
+  width: 512px;
+  height: 512px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 65%);
+  background: #9333ea;
+  opacity: 0;
+  filter: blur(128px);
+  mix-blend-mode: screen;
   top: -200px;
   left: -200px;
   pointer-events: none;
-  animation: floatOrb 18s ease-in-out infinite;
 }
 
 .hero-glow-2 {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 512px;
+  height: 512px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 65%);
+  background: #4f46e5;
+  opacity: 0;
+  filter: blur(128px);
+  mix-blend-mode: screen;
   bottom: -100px;
   right: 10%;
   pointer-events: none;
-  animation: floatOrb 22s ease-in-out infinite reverse;
+}
+
+:root[data-theme='dark'] .hero-glow-1 {
+  opacity: 0.14;
+  animation: floatOrb 18s ease-in-out infinite, blobPulse 9s ease-in-out infinite;
+}
+
+:root[data-theme='dark'] .hero-glow-2 {
+  opacity: 0.12;
+  animation: floatOrb 22s ease-in-out infinite reverse, blobPulse 11s ease-in-out infinite 1.5s;
 }
 
 /* Hero Grid */
@@ -116,7 +131,7 @@
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, #6366f1, #8b5cf6, #06b6d4, #6366f1);
+  background: conic-gradient(from 0deg, #0ea5e9, #0284c7, #0369a1, #0ea5e9);
   animation: spin 8s linear infinite;
   z-index: 0;
 }
@@ -169,15 +184,15 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-subtle);
   color: var(--text-muted);
   text-decoration: none;
   transition: all var(--transition-base);
 }
 
 .scroll-indicator:hover {
-  border-color: var(--accent-indigo);
-  color: var(--accent-indigo);
+  border-color: var(--interactive);
+  color: var(--interactive);
 }
 
 @media (max-width: 900px) {
