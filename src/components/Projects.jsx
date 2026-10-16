@@ -4,14 +4,14 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { projects } from '../data/portfolioData';
 import './Projects.css';
 
-const categories = ['All', ...new Set(projects.map((p) => p.category))];
+const categories = ['All', 'AI & Data', 'Backend Systems', 'Full Stack', 'Web & Mobile'];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, delay: Math.min(i, 5) * 0.07, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
@@ -34,19 +34,19 @@ export default function Projects() {
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          <p className="section-label">Featured Work</p>
+          <p className="section-label">Project Library · {projects.length} builds</p>
           <h2 className="section-title">
             My <span className="text-gradient">Projects</span>
           </h2>
           <p className="section-subtitle">
-            Handpicked projects that showcase my range from AI/LLM tools to production-grade backend systems.
+            A closer look at the products, experiments, and systems I have built.
           </p>
         </motion.div>
 
-        {/* Filters */}
         <motion.div
           className="filter-tabs"
-          style={{ marginBottom: '40px' }}
+          role="group"
+          aria-label="Filter projects by category"
           variants={fadeUp}
           custom={1}
           initial="hidden"
@@ -55,19 +55,20 @@ export default function Projects() {
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               className={`filter-tab ${activeFilter === cat ? 'active' : ''}`}
+              aria-pressed={activeFilter === cat}
               onClick={() => setActiveFilter(cat)}
             >
-              {cat}
+              {cat}{cat === 'All' ? ` (${projects.length})` : ''}
             </button>
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="projects-grid">
           <AnimatePresence>
             {filtered.map((project, idx) => (
-              <motion.div
+              <motion.article
                 key={project.title}
                 className="project-card"
                 custom={idx}
@@ -77,39 +78,28 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 layout
               >
-                {/* Full-width cover image banner */}
                 <div className="project-cover">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="project-cover-img"
-                    />
-                  ) : (
-                    <div
-                      className="project-cover-placeholder"
-                      style={{ background: `linear-gradient(135deg, ${project.color}30, ${project.color}08)` }}
-                    >
-                      <span className="project-cover-icon">{project.icon}</span>
-                    </div>
-                  )}
-                  {/* Bottom gradient fade */}
-                  <div
-                    className="project-cover-fade"
-                    style={{ background: `linear-gradient(to top, #050508 0%, transparent 100%)` }}
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt || `${project.title} project artwork`}
+                    className="project-cover-img"
+                    style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                    loading="lazy"
+                    decoding="async"
                   />
-                  {/* Category badge */}
+                </div>
+
+                <div className="project-body">
                   <span
                     className="project-category-badge"
-                    style={{ color: project.color, borderColor: `${project.color}50`, background: 'rgba(5,5,8,0.85)' }}
+                    style={{ borderColor: `${project.color}80` }}
                   >
                     {project.category}
                   </span>
-                </div>
-
-                {/* Card body */}
-                <div className="project-body">
-                  <h3 className="project-title">{project.title}</h3>
+                  <div className="project-title-row">
+                    <h3 className="project-title">{project.title}</h3>
+                    {project.status && <span className="project-status">{project.status}</span>}
+                  </div>
                   <p className="project-desc">{project.description}</p>
 
                   {project.guide && (
@@ -118,7 +108,7 @@ export default function Projects() {
                     </p>
                   )}
 
-                  <div className="project-tech">
+                  <div className="project-tech" aria-label="Technologies used">
                     {project.tech.map((t) => (
                       <span key={t} className="tech-tag">{t}</span>
                     ))}
@@ -133,7 +123,7 @@ export default function Projects() {
                         className="btn btn-outline project-link-btn"
                       >
                         <FiGithub size={15} />
-                        GitHub
+                        View code
                       </a>
                     )}
                     {project.demo && (
@@ -144,12 +134,12 @@ export default function Projects() {
                         className="btn btn-primary project-link-btn"
                       >
                         <FiExternalLink size={15} />
-                        Live Demo
+                        {project.demoLabel || 'Live demo'}
                       </a>
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </div>
